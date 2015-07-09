@@ -1,8 +1,15 @@
 require 'sinatra'
 require 'json'
 require 'rest-client'
+require 'sinatra-logentries'
 require './info.rb'
 require './helpers.rb'
+
+set :environment, :production
+
+configure do
+  Sinatra::Logentries.token = '05e30afd-e674-46a8-bb28-37e0e163fe93'
+end
 
 get '/' do
 	erb :index
