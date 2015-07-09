@@ -2,6 +2,7 @@ require 'sinatra'
 require 'json'
 require 'rest-client'
 require './info.rb'
+require './helpers.rb'
 
 get '/' do
 	erb :index

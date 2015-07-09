@@ -5,13 +5,9 @@
  *
  * Made By MaterializeCSS.com
  */
-.code {
-  background-color: #e0e0e0;
-  color: #388e3c !important;
-}
-
-.shadow-text {
-  text-shadow: 4px 4px 4px #000;
+.main-image {
+  display: block;
+  margin: auto;
 }
 
 nav ul a,

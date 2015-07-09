@@ -17,9 +17,9 @@
       <div class="nav-wrapper container">
         <a id="logo-container" href="#" class="brand-logo">Mike Solomon</a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="/blog"><i class="fa fa-paperclip left"></i>Blog</a></li>
-          <li><a href="/api/documentation"><i class="fa fa-plug left"></i>API</a></li>
-		  <li><a href="https://github.com"><i class="fa fa-github left"></i>GitHub</a></li>
+          <li class=<%= "active" if active_page?("") %> ><a href="/"><i class="fa fa-home left"></i>Home</a></li>
+          <li class=<%= "active" if active_page?("api/documentation") %> ><a href="/api/documentation"><i class="fa fa-plug left"></i>API</a></li>
+		  <li><a href="https://github.com/msolomonTMG" target="_blank"><i class="fa fa-github left"></i>GitHub</a></li>
         </ul>
 
         <ul id="nav-mobile" class="side-nav">
@@ -36,13 +36,13 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+          <h5 class="white-text">Mike Solomon</h5>
+          <p class="grey-text text-lighten-4">I'm a product manager and I love what I do. This is my personal website where I post articles about the product/tech/ux industry that interest me, hopefully they interest you as well. Enjoy your stay!</p>
 
 
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
+          <h5 class="white-text">Social</h5>
           <ul>
             <li><a class="white-text" href="#!">Link 1</a></li>
             <li><a class="white-text" href="#!">Link 2</a></li>
@@ -51,7 +51,7 @@
           </ul>
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
+          <h5 class="white-text">Contact</h5>
           <ul>
             <li><a class="white-text" href="#!">Link 1</a></li>
             <li><a class="white-text" href="#!">Link 2</a></li>
@@ -63,7 +63,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      Big ups to <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
       </div>
     </div>
   </footer>
