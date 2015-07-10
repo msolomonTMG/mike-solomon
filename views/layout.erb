@@ -17,13 +17,13 @@
       <div class="nav-wrapper container">
         <a id="logo-container" href="#" class="brand-logo">Mike Solomon</a>
         <ul class="right hide-on-med-and-down">
-          <li class=<%= "active" if active_page?("") %> ><a href="/"><i class="fa fa-home left"></i>Home</a></li>
-          <li class=<%= "active" if active_page?("api/documentation") %> ><a href="/api/documentation"><i class="fa fa-plug left"></i>API</a></li>
-		  <li><a href="https://github.com/msolomonTMG" target="_blank"><i class="fa fa-github left"></i>GitHub</a></li>
+          <li class=<%= "active" if active_page?("") %> ><a href="/"><i class="material-icons left">home</i></i>Home</a></li>
+          <li class=<%= "active" if active_page?("api/documentation") %> ><a href="/api/documentation"><i class="material-icons left">code</i>API</a></li>
         </ul>
 
         <ul id="nav-mobile" class="side-nav">
-          <li><a href="#">Navbar Link</a></li>
+          <li class=<%= "active" if active_page?("") %> ><a href="/"><i class="material-icons left">home</i> Home</a></li>
+          <li class=<%= "active" if active_page?("api/documentation") %> ><a href="/api/documentation"><i class="fa fa-plug left"></i> API</a></li>
         </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       </div>
@@ -60,7 +60,7 @@
     <div class="footer-copyright">
       <div class="container">
       <span class="left">Big ups to <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a></span>
-      <span class="right"><i class="fa fa-pencil"></i> with <i class="fa fa-heart"></i> in Brooklyn</span>
+      <span class="right"><i class="fa fa-pencil"></i> with <i class="fa fa-heart"></i> from Brooklyn</span>
       </div>
     </div>
   </footer>

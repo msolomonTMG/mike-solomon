@@ -19,7 +19,7 @@ get '/api/documentation' do
 	erb :api_documentation
 end
 
-get '/api/v1/?' do
+get '/api/v1/all' do
 	experience = get_experience
 	skills = get_skills
 	education = get_education

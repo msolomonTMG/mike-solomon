@@ -8,7 +8,7 @@ def get_experience
 				"eCommerce"
 			],
 			:start => "September 2014",
-			:description => "Everything JackThreads"
+			:description => "Drive the product development of JackThreads. Act as the glue between the design, development and business teams,"
 		},
 		:previous => [
 			{
@@ -16,7 +16,7 @@ def get_experience
 				:company => "VistaOne Solutions",
 				:industries => [
 					"Financial Services",
-					"Software"
+					"SaaS"
 				],			
 				:start => "May 2012",
 				:end => "November 2013",
@@ -27,11 +27,11 @@ def get_experience
 				:company => "VistaOne Solutions",
 				:industries => [
 					"Financial Services",
-					"Software"
+					"SaaS"
 				],			
 				:start => "November 2013",
 				:end => "September 2014",
-				:description => "Configure dashboards, reports and views per client.",
+				:description => "Configure custom dashboards, reports and views for hedge fund administrators.",
 			}
 		]
 	}
@@ -51,6 +51,18 @@ def get_skills
 				{
 					:project_planning => "Microsoft Project"
 				},
+			],
+			:code => [
+				"ruby",
+				"PHP",
+				"JavaScript",
+				"HTML/CSS",
+				"SQL"
+			],
+			:management => [
+				"scrum sprints",
+				"budget forecasting",
+				"resource allocation"
 			]
 		}
 	}
@@ -96,11 +108,6 @@ def get_education
 						:position => "Offensive Line",
 						:awards => "Conference Champions",
 						:institution => "Muhlenberg College"
-					}
-				},
-				{
-					:basketball => {
-						:division => "intramural"
 					}
 				}
 			]
