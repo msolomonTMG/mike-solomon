@@ -1,0 +1,85 @@
+
+<div class="section no-pad-bot">
+  <div class="container">
+    <br><br>
+    <h1 class="header center"></h1>
+    <img src="/img/deployer-icon.png" alt="" class="circle main-image">
+    <div class="row center">
+      <h5 class="header col s12 light"><strong>Apollo Chrome Extension</strong></h5>
+      <div class="col s12 m6 offset-m3">
+        <p class="center-align light">Every other Friday at Thrillist Media Group is "Hacker Friday" -- a day devoted to working on side projects for the company. Apollo is my first chrome extension; it deploys code to our staging servers with one click. I'm not done writing this yet :)</p>
+      </div>
+    </div>
+    <div class="row center">
+      <a href="/" class="btn-large waves-effect waves-light teal lighten-1">Draft</a>
+    </div>\
+    <br><br>
+  </div>
+</div>
+
+<div class="container">
+  <div class="section no-pad-bot">
+    <div class="row">
+      <div class="col s12 center">
+        <img class="z-depth-2" src="/img/deployer-stage.png" width="100%" >
+        <br><br>
+      </div>
+    </div>
+    <div class="row center">
+      <h4>Features</h4>
+    </div>
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center teal-text"><i class="fa fa-rocket"></i></h2>
+          <h5 class="center">Click to Deploy</h5>
+
+          <p class="light">Apollo's staging button reveals a dropdown of staging servers. Just click one to start deploying. In the background, Jenkins has kicked off a job and is deploying the code from pull request's branch onto your selected server.</p>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center teal-text"><i class="material-icons">done</i></h2>
+          <h5 class="center">Identify QAed Branches</h5>
+
+          <p class="light">Apollo's dropdown knows which branches in the list have been marked as QAed. It is usually safe to deploy to a staging server that is marked as QAed because testing should be complete.</p>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center teal-text"><i class="material-icons">autorenew</i></h2>
+          <h5 class="center">Progress Bar</h5>
+
+          <p class="light">Once a job has been kicked off, Jenkins comes back with an estimated time to completion. This estimated time is visualized as a progress bar at the top of the page - thanks <a href="http://nanobar.micronube.com/" target="_blank">nanobar.js!</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 center">
+        <img class="z-depth-2" src="/img/deployer-staging.png" width="100%" >
+        <br><br>
+      </div>
+      <div class="col s12">
+        <code class="teal-text">
+          function jenkinsDeploy(launchData){
+            var deployRequest = $.ajax({
+                type: 'POST',
+                url: window.launchURL+"/view/Deploy/job/Pinnacle%20Staging/buildWithParameters",
+                data: launchData,
+                success: function(res, status, xhr){
+                    var queueItem = xhr.getResponseHeader("location").split("jenkins.thrillist.com/queue")[1];
+                    pollQueue(queueItem);
+                },
+                error: function(msg){
+                  console.log('error with jenkinsDeploy');
+                  console.log(msg);
+                }
+            });
+          }
+        </code>
+      </div>
+    </div>
+  </div>
+</div>

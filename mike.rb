@@ -15,6 +15,10 @@ get '/' do
 	erb :index
 end
 
+get '/github-jenkins-chrome-extension' do
+	erb :github_jenkins_chrome_extension
+end
+
 get '/api/documentation' do
 	erb :api_documentation
 end
