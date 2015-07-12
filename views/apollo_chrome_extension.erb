@@ -61,6 +61,30 @@
         <img class="z-depth-2" src="/img/deployer-staging.png" width="100%" >
         <br><br>
       </div>
+    <div class="row center">
+      <h4>Credits</h4>
+      <div class="col s12 m6 offset-m3">
+        <p class="center-align light">Apollo depends on two major components to operate. Before I dive into details of Apollo, I feel compelled to give a couple of shout outs to those responsible for each dependent component.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="icon-block">
+          <!--<h2 class="center teal-text"><i class="material-icons">settings_applications</i></h2>-->
+          <img src="https://camo.githubusercontent.com/73aa2e5efdce9c86a20922bc04f9c2bde852be4f/687474703a2f2f6a656e6b696e732d63692e6f72672f73697465732f64656661756c742f66696c65732f6a656e6b696e735f6c6f676f2e706e67" width="100%">
+          <h5 class="center">DevOps</h5>
+          <p class="light">The DevOps team at Thrillist Media Group is led by <a href="https://www.linkedin.com/in/timothymahoney" target="_blank">Tim Mahoney</a>. He set us up with our staging infrastructure as well as the Jenkins jobs that deploy code to the boxes. All Apollo has to do is POST a payload to a Jenkins endpoint. Jenkins then kicks off a job that runs ansible plays on our staging machines. Tim's heavy lifting paved the way for this chrome extension to come into being.</p>
+        </div>
+      </div>
+
+      <div class="col s12 m6">
+        <div class="icon-block">
+          <img src="/img/whiteboard1.png" width="100%" height="128px">
+          <h5 class="center">Whiteboard</h5>
+          <p class="light">Whiteboard is an in-house application that was created by our Lead Front End Developer <a href="https://www.linkedin.com/in/jhigginsiii" target="_blank">Joe Higgins</a> on a hacker Friday. The app is a real-time dashboard that lists the different branches running on each of our staging servers. Before this app, we used to write this information on a whiteboard near our desks, hence the name.  This app has an API endpoint that Apollo uses to populate the dropdown of servers. </p>
+        </div>
+      </div>
+    </div>
       <div class="col s12" style="overflow-y: hidden">
         <code class="teal-text">
           function jenkinsDeploy(launchData){

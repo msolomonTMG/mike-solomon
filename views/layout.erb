@@ -24,12 +24,12 @@
         <a id="logo-container" href="/" class="brand-logo">Mike Solomon</a>
         <ul class="right hide-on-med-and-down">
           <li class=<%= "active" if active_page?("") %> ><a href="/"><i class="material-icons left">home</i></i>Home</a></li>
-          <li class=<%= "active" if active_page?("api/documentation") %> ><a href="/api/documentation"><i class="material-icons left">code</i>API</a></li>
+          <li class=<%= "active" if active_page?("api/documentation") %> ><a href="/api/documentation"><i class="material-icons left">info</i>About</a></li>
         </ul>
 
         <ul id="nav-mobile" class="side-nav">
-          <li class=<%= "active" if active_page?("") %> ><a href="/"><i class="material-icons left">home</i> Home</a></li>
-          <li class=<%= "active" if active_page?("api/documentation") %> ><a href="/api/documentation"><i class="fa fa-plug left"></i> API</a></li>
+          <li class=<%= "active" if active_page?("") %> ><a href="/">Home</a></li>
+          <li class=<%= "active" if active_page?("api/documentation") %> ><a href="/api/documentation">About</a></li>
         </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       </div>
