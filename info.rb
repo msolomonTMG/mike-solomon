@@ -77,7 +77,7 @@ def get_education
 			:degree => "M.S. Technological Systems Management",
 			:emphasis => "Global Operations Management",
 			:college => "Engineering and Applied Sciences",
-			:department => "Technoloy and Society",
+			:department => "Technology and Society",
 			:expected => 2017,
 			:description => "Global Operations Management program enables individuals to understand the integration of an enterprise's processes, and how to utilize modern tools, techniques and technologies to make their organization more competitive and profitable. The goal of the program is to increase the student's value to their organization. This is accomplished by introducing the strategic fundamentals of the customer/value driven enterprise, the management concepts of organizational design and structure, and the basic business processes for running an enterprise, including quality, finance and accounting, and information systems."
 		},
