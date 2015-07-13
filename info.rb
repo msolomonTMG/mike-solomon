@@ -2,7 +2,7 @@ def get_experience
 	experience = {
 		:current => {
 			:position => "Product Manager",
-			:comapny => "Thrillist Media Group",
+			:company => "Thrillist Media Group",
 			:industries => [
 				"Media",
 				"eCommerce"
