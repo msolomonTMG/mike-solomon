@@ -19,6 +19,7 @@
 
 <div class="container">
   <div class="section no-pad-bot">
+
     <div class="row">
       <div class="col s12 center">
         <img class="z-depth-2" src="/img/deployer-stage.png" width="100%" >
@@ -33,34 +34,31 @@
         <div class="icon-block">
           <h2 class="center teal-text"><i class="fa fa-rocket"></i></h2>
           <h5 class="center">Click to Deploy</h5>
-
           <p class="light">Apollo's staging button reveals a dropdown of staging servers. Just click one to start deploying. In the background, Jenkins has kicked off a job and is deploying the code from pull request's branch onto your selected server.</p>
         </div>
       </div>
-
       <div class="col s12 m4">
         <div class="icon-block">
           <h2 class="center teal-text"><i class="material-icons">done</i></h2>
           <h5 class="center">Identify QAed Branches</h5>
-
           <p class="light">Apollo's dropdown knows which branches in the list have been marked as QAed. It is usually safe to deploy to a staging server that is marked as QAed because testing should be complete.</p>
         </div>
       </div>
-
       <div class="col s12 m4">
         <div class="icon-block">
           <h2 class="center teal-text"><i class="material-icons">autorenew</i></h2>
           <h5 class="center">Progress Bar</h5>
-
           <p class="light">Once a job has been kicked off, Jenkins comes back with an estimated time to completion. This estimated time is visualized as a progress bar at the top of the page - thanks <a href="http://nanobar.micronube.com/" target="_blank">nanobar.js!</a></p>
         </div>
       </div>
     </div>
+
     <div class="row">
       <div class="col s12 center">
         <img class="z-depth-2" src="/img/deployer-staging.png" width="100%" >
         <br><br>
       </div>
+    </div>
     <div class="row center">
       <h4>Credits</h4>
       <div class="col s12 m6 offset-m3">
@@ -76,33 +74,48 @@
           <p class="light">The DevOps team at Thrillist Media Group is led by <a href="https://www.linkedin.com/in/timothymahoney" target="_blank">Tim Mahoney</a>. He set us up with our staging infrastructure as well as the Jenkins jobs that deploy code to the boxes. All Apollo has to do is POST a payload to a Jenkins endpoint. Jenkins then kicks off a job that runs ansible plays on our staging machines. Tim's heavy lifting paved the way for this chrome extension to come into being.</p>
         </div>
       </div>
-
       <div class="col s12 m6">
         <div class="icon-block">
-          <img src="/img/whiteboard1.png" width="100%" height="128px">
+          <img src="/img/whiteboard.png" width="100%" height="152px">
           <h5 class="center">Whiteboard</h5>
           <p class="light">Whiteboard is an in-house application that was created by our Lead Front End Developer <a href="https://www.linkedin.com/in/jhigginsiii" target="_blank">Joe Higgins</a> on a hacker Friday. The app is a real-time dashboard that lists the different branches running on each of our staging servers. Before this app, we used to write this information on a whiteboard near our desks, hence the name.  This app has an API endpoint that Apollo uses to populate the dropdown of servers. </p>
         </div>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col s12 center">
+        <img class="z-depth-2" src="/img/jenkins.png" width="100%" >
+        <br><br>
+      </div>
+    </div>
+    <div class="row center">
+      <h4>POSTing to Jenkins</h4>
+      <div class="col s12 m6 offset-m3">
+        <p class="center-align light">After collecting the information about the code that the user wishes to deploy, Apollo bundles it into a payload and POSTs it to Jenkins.</p>
+      </div>
+    </div>
+    <div class="row">
       <div class="col s12" style="overflow-y: hidden">
-        <code class="teal-text">
-          function jenkinsDeploy(launchData){
-            var deployRequest = $.ajax({
-                type: 'POST',
-                url: window.launchURL+"/view/Deploy/job/Pinnacle%20Staging/buildWithParameters",
-                data: launchData,
-                success: function(res, status, xhr){
-                    var queueItem = xhr.getResponseHeader("location").split("jenkins.thrillist.com/queue")[1];
-                    pollQueue(queueItem);
-                },
-                error: function(msg){
-                  console.log('error with jenkinsDeploy');
-                  console.log(msg);
-                }
-            });
-          }
-        </code>
+        <pre class="language-markup">
+          <code class="teal-text">
+            <span class="light-blue-text">function</span> <span class="green-text">jenkinsDeploy</span>(<span class="orange-text text-darken-2">launchData</span>){
+              <span class="light-blue-text">var</span> deployRequest <span class="red-text">= $</span>.ajax({
+                  type: <span class="amber-text text-accent-4">'POST'</span>,
+                  url: <span class="light-blue-text">window</span>.launchURL<span class="red-text">+</span><span class="amber-text text-accent-4">"/view/Deploy/job/Pinnacle%20Staging/buildWithParameters"</span>,
+                  data: launchData,
+                  <span class="green-text">success:</span> <span class="light-blue-text">function</span>(<span class="orange-text text-darken-2">res, status, xhr</span>){
+                      <span class="light-blue-text">var</span> queueItem = xhr.<span class="light-blue-text">getResponseHeader</span>(<span class="amber-text text-accent-4">"location"</span>).<span class="light-blue-text">split</span>(<span class="amber-text text-accent-4">"jenkins.thrillist.com/queue"</span>)[<span class="purple-text">1</span>];
+                      pollQueue(queueItem);
+                  },
+                  <span class="green-text">error:</span> <span class="light-blue-text">function</span>(<span class="orange-text text-darken-2">msg</span>){
+                    console.<span class="light-blue-text">log</span>(<span class="amber-text text-accent-4">'error with jenkinsDeploy'</span>);
+                    console.<span class="light-blue-text">log</span>(msg);
+                  }
+              });
+            }
+          </code>
+        </pre>
       </div>
     </div>
   </div>

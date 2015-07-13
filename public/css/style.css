@@ -5,6 +5,10 @@
  *
  * Made By MaterializeCSS.com
  */
+.language-markup {
+  background: #f5f2f0;
+  border: solid 1px rgba(51, 51, 51, 0.12);
+}
 .main-image {
   display: block;
   margin: auto;
