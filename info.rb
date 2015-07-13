@@ -18,9 +18,9 @@ def get_experience
 				:industries => [
 					"Financial Services",
 					"SaaS"
-				],			
-				:start => "May 2012",
-				:end => "November 2013",
+				],
+				:start => "November 2013",
+				:end => "September 2014",			
 				:description => "Lead a global team of 10 analysts building secure online portals for the world's largest hedge fund administrations.",
 			},
 			{
@@ -30,8 +30,8 @@ def get_experience
 					"Financial Services",
 					"SaaS"
 				],			
-				:start => "November 2013",
-				:end => "September 2014",
+				:start => "May 2012",
+				:end => "November 2013",
 				:description => "Configure custom dashboards, reports and views for hedge fund administrators.",
 			}
 		]
