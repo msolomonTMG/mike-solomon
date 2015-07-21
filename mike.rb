@@ -12,7 +12,7 @@ configure do
 end
 
 get '/' do
-	erb :index
+	erb :api_documentation
 end
 
 get '/apollo-chrome-extension' do
