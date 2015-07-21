@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <meta property="og:image" content="//mike-solomon.com/img/profile.jpg" />
+  <title>Mike Solomon</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="public/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon/favicon-16x16.png">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="public/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="public/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <div class="navbar-fixed">
+    <nav class="white" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="index.html" class="brand-logo">Mike Solomon</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="index.html"><i class="material-icons left">home</i></i>Home</a></li>
+          <li class="active"><a href="api-documentation.html"><i class="material-icons left">info</i>About</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+          <li><a href="index.html">Home</a></li>
+          <li class="active"><a href="api-documentation.html">About</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </div>
+
+
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center"></h1>
+      <img src="https://en.gravatar.com/userimage/90425387/cb995ce26dbbaac921d134b75917982d.jpg?size=150" alt="" class="circle main-image">
+      <div class="row center">
+        <h5 class="header col s12 light"><strong>Get to Know Me</strong> via API!</h5>
+        <div class="col s12 m4 offset-m4">
+          <p class="center-align light">Get to know me by hitting the end-points documented below :)</p>
+        </div>
+      </div>
+      <div class="row center">
+        <a href="/api/v1/all" class="btn-large waves-effect waves-light teal lighten-1">Get Everything</a>
+      </div>
+      <br><br>
+      <ul class="collection">
+        <li class="collection-item avatar">
+          <i class="material-icons circle green">public</i>
+          <span class="title">Experience</span>
+          <p>
+            <code class=" language-markup">
+              mike-solomon.com/api/v1/experience
+            </code>
+          </p>
+          <a href="/api/v1/experience" class="secondary-content"><i class="material-icons">launch</i></a>
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle blue">build</i>
+          <span class="title">Skills</span>
+          <p>
+            <code class=" language-markup">
+              mike-solomon.com/api/v1/skills
+            </code>
+          </p>
+          <a href="/api/v1/skills" class="secondary-content"><i class="material-icons">launch</i></a>
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle yellow">school</i>
+          <span class="title">Education</span>
+          <p> 
+            <code class=" language-markup">
+              mike-solomon.com/api/v1/education
+            </code>
+          </p>
+          <a href="/api/v1/education" class="secondary-content"><i class="material-icons">launch</i></a>
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle red">play_arrow</i>
+          <span class="title">All</span>
+          <p>
+            <code class=" language-markup">
+              mike-solomon.com/api/v1/all
+            </code>
+          </p>
+          <a href="/api/v1/all" class="secondary-content"><i class="material-icons">launch</i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Mike Solomon</h5>
+          <p class="grey-text text-lighten-4">I'm a product manager and I love what I do. This is my personal website where I post articles about the product/tech/ux industry that interest me, hopefully they interest you as well. Enjoy your stay!</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Social</h5>
+          <ul>
+            <li><a class="white-text" href="https://www.github.com/msolomonTMG"><i class="fa fa-github"></i> GitHub</a></li>
+            <li><a class="white-text" href="https://www.linkedin.com/in/michaelgarysolomon"><i class="fa fa-linkedin"></i> Linkedin</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Contact</h5>
+          <ul>
+            <li><a class="white-text" href="mailto:hello@mike-solomon.com"><i class="fa fa-send"></i> hello@mike-solomon.com</a></li>
+            <li><a class="white-text" href="tel:+16317477950"><i class="fa fa-phone"></i> 631-747-7950</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      <span class="left">Big ups to <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a></span>
+      <span class="right"><i class="fa fa-pencil"></i> with <i class="fa fa-heart"></i> from Brooklyn</span>
+      </div>
+    </div>
+  </footer>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="public/js/materialize.js"></script>
+  <script src="public/js/init.js"></script>
+
+  <!-- GA -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-65057210-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+  </body>
+</html>
