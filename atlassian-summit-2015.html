@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+  <meta property="og:title" content="Timesheets Suck. But They Don't Have To."/>
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/600px-Git_icon.svg.png"/>
+  <meta property="og:image:url" content="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/600px-Git_icon.svg.png"/>
+  <meta property="og:description" content="Nobody enjoys doing timesheets. It can be a tedious manual task but it is a necessary evil. I wrote a git hook that not only makes timesheets easier to do, but it also makes them more accurate."/>
+  <meta  property="og:url" content="http://mike-solomon.com/timesheet-githook" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="theme-color" content="#26a69a"/>
+
+  <title>Mike Solomon</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="public/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon/favicon-16x16.png">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="public/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="public/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <div class="navbar-fixed">
+    <nav class="white" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="/" class="brand-logo">Mike Solomon</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="index.html"><i class="material-icons left">home</i></i>Home</a></li>
+          <li><a href="/api/documentation"><i class="material-icons left">info</i>About</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/api/documentation">About</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </div>
+
+
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center"></h1>
+      <img src="http://product.twoodo.com/wp-content/uploads/2015/04/jira-icon.png" height="128px" width="=128px" alt="" class="circle main-image">
+      <div class="row center">
+        <h5 class="header col s12 light"><strong>Here Is What I Learned at the 2015 Atlassian Summit.</strong></h5>
+        <div class="col s12 m6 offset-m3">
+          <p class="center-align light">To a product manager, the ticket system is gospel. I've been on a mission to streamline our workflow at Thrillist Media Group for the past year and I have been relying heavily on JIRA. When I heard that Atlassian and other JIRA users would be sharing their latest products and tips, I hopped on a plane to San Francisco to absorb all that I could. Here is what I took away...</p>
+          <p class="center-align light"><small><i class="fa fa-pencil"></i> November 3, 2015</small></p>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section no-pad-bot">
+
+      <div class="row">
+        <div class="col s12 center">
+          <img class="z-depth-2" src="https://camo.githubusercontent.com/d46773d6777caa0d757f4ead08714dd4183fa5b7/687474703a2f2f692e696d6775722e636f6d2f31714d32494c492e676966" width="100%" >
+          <br><br>
+        </div>
+      </div>
+
+      <div class="row center" id="features">
+        <h2 class="center teal-text"><i class="fa fa-calendar"></i></h2>
+        <h4>Schedule</h4>
+      </div>
+      <div class="row center">
+        <div class="col s10 offset-m1 center">
+          <table class="table striped">
+            <thead>
+              <th>Talk</th>
+              <th>Description</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Celebrating Portfolio for JIRA's First Year with Five Learnings</td>
+                <td>Portfolio for JIRA's 1st year, in short, has been one hell of a ride. Join product manager Martin Suntinger as he talks about data-driven planning no-one will secretly shake their heads at, how to maintain your innovation mojo at scale, and how to report beyond just facts and figures. Plus, see what's in store for the next generation of Portfolio for JIRA. No "terrible twos" here!</td>
+              </tr>
+              <tr>
+                <td>How to Build in Quality from Day 1 using Lean QA and Agile Testing</td>
+                <td>If you're struggling to implement QA methods that fit with agile's core principles, you're not alone. Join Giancarlo and Maurizio as they explain how their teams found a sweet spot at the intersection of agile and QA engineering. They'll share common pitfalls and how to avoid them. Plus, get tips and tricks on how to capture requirements and link JIRA to test repositories for complete traceability.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="icon-block">
+            <h2 class="center teal-text"><i class="fa fa-code-fork"></i></h2>
+            <h5 class="center">Never Leave the Terminal</h5>
+            <p class="light">After each commit, the git hook will ask you how long it took to code that particular commit. Answer in weeks, days, hours, minutes or a combination of the formats.</p>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="icon-block">
+            <h2 class="center teal-text"><i class="fa fa-calendar"></i></h2>
+            <h5 class="center">Timesheets Are Updated in JIRA</h5>
+            <p class="light">The git hook reads the JIRA ticket in your branch name and then logs the amount of time specified to that ticket using your commit message as the description.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row center">
+        <h2 class="center teal-text"><i class="fa fa-suitcase"></i></h2>
+        <h4>Use Case</h4>
+        <div class="col s12 m6 offset-m3">
+          <p class="center-align light">The timesheet on the left is for a developer that I work with before she installed the git hook. The timesheet on the right is from her first day using the git hook. The right hand side gives a much more accurate depiction of what happened during the day.</p>
+        </div>
+      </div>
+
+      <div class="row z-depth-2">
+        <div class="col s6">
+          <a href="public/img/timesheet-before.png"><img src="public/img/timesheet-before.png" width="100%"></a>
+        </div>
+        <div class="col s6">
+          <a href="public/img/timesheet-after.png"><img src="public/img/timesheet-after.png" width="100%"></a>
+        </div>
+      </div>
+
+      <div class="row center">
+        <h2 class="center teal-text"><i class="fa fa-terminal"></i></h2>
+        <h4>Diving Into the Code</h4>
+        <div class="col s12 m6 offset-m3">
+          <p class="center-align light">I'll walk through the git hook code itself. If you would rather just read the full code or fork the repo, feel free to do so <a href="https://github.com/msolomonTMG/timesheet-githook">here</a>. I also welcome pull requests! Okay, let's get started!</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m12">
+          <div class="icon-block">
+            <p class="light"><span class="lead-in">Wait... What's a post-commit file?</span> A post-commit file is a script that fires immediately after a commit is made. The script can be written in shell, python or ruby (I wrote mine in shell just because I wanted to try something new). The post-commit file lives in the root directory of the github repository in the /.git/hooks directory and is named simply: <code>post-commit</code>. The file needs to have permission to be executed hence the <code>chmod +x post-commit</code> command in the <a href="https://github.com/msolomonTMG/timesheet-githook">installation steps</a>. You can read more about git hooks in <a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks#Client-Side-Hooks">Git's git hook documentation</a>.</p>
+          </div>
+
+          <br/>
+
+          <div class="icon-block">
+            <p class="light"><span class="lead-in">The first thing we want to do is check JIRA credentials.</span> We cannot log time via the JIRA API without these. We will be storing the credentials in the same directory as our post-commit file. This command will assign the <code>jira_credentials_file</code> variable to the file that lives in the user's git hook directory named <code>jira_credentials.txt</code></p>
+            
+            <code data-gist-id="befb53eb3ceb23509d04" data-gist-line="32" data-gist-hide-footer="true" data-gist-hide-line-numbers="true"></code>
+            
+            <p class="light">We use: <code><strong>`git rev-parse --git-dir`</strong>/hooks/jira_credentials.txt</code> rather than just <code><strong>/.git</strong>/hooks/jira_credentials.txt</code> because `git rev-parse --git-dir` command will the will change the user's directory to the proper git hooks directory even if they are using git submodules.</p>
+
+            <p class="light">We then check if that file exists. If it does, we will assume the credentials within are valid. If the file does not exist, we will need to prompt the user to enter their JIRA credentials</p>
+            <code data-gist-id="befb53eb3ceb23509d04" data-gist-line="46-50" data-gist-hide-footer="true" data-gist-hide-line-numbers="true"></code>
+
+            <p class="light">This is the parse_jira_credentials function that gets called if we do not find JIRA credentials stored in the user's git hook directory. It first asks the user to enter their JIRA username and stores the input into a variable called "username." Then, it asks the user to enter their JIRA password (the input is made to be invisible on the user's terminal). Then the script will base64 encode the credentials and save them to a file in the git hooks directory called jira_credentials.txt. <strong>Note:</strong> as a future improvement, I would like to permission this file to only allow the creator to read it.</p>
+            <code data-gist-id="befb53eb3ceb23509d04" data-gist-line="8-19" data-gist-hide-footer="true" data-gist-hide-line-numbers="true"></code>
+          </div>
+
+          <br/>
+
+          <div class="icon-block">
+            <p class="light"><span class="lead-in">Now let's find out where to log the time.</span> This git hook assumes that developers are creating branches with JIRA ticket numbers included in the name. If you aren't doing this already, I highly recommend doing so. Tying JIRA to your codebase can help keep your code organized and tell the bigger story behind the code.</p>
+
+            <p class="light">Now that we know to look for a JIRA ticket in the git branch name, let's parse the git branch for it using this code. It will assign the variable <code>ticket</code> to the result of the function: <code>parse_jira_ticket_in_branch</code></p>
+            <code data-gist-id="befb53eb3ceb23509d04" data-gist-line="35" data-gist-hide-footer="true" data-gist-hide-line-numbers="true"></code>
+            
+            <p class="light">The <code>parse_jira_ticket_in_branch</code> function starts off by calling a different function: <code>parse_git_branch</code>. That's because we first need to determine what the name of the git branch is before we can start looking for JIRA tickets in it. I found both of these functions online at <a href="http://monksealsoftware.com/add-jira-issue-number-to-git-commit-message/">Monk Seal Software's Blog</a>.</p>
+            <code data-gist-id="befb53eb3ceb23509d04" data-gist-line="27-29" data-gist-hide-footer="true" data-gist-hide-line-numbers="true"></code>
+            <code data-gist-id="befb53eb3ceb23509d04" data-gist-line="22-24" data-gist-hide-footer="true" data-gist-hide-line-numbers="true"></code>
+            
+            <p class="light">The <code>parse_git_branch</code> function returns the branch name and then the <code>parse_jira_ticket_in_branch</code> function the ticket name by using a regular expression that captures issue key using patterns such as "ABC-123" or "abc-123" (it doesn't matter how many letters or numbers your keys have). Now we know which ticket we are going to log time to and it is stored in our variable named <code>ticket</code>!
+          </div>
+
+          <br/>
+          
+          <div class="icon-block">
+            <p class="light"><span class="lead-in">Let's take a look at the commit message.</span> The commit message will be used as the description for the user's timesheet. The git hook documentation gives us a command for retrieving the commit in a post-commit hook. I took it one step further by grabbing only the commit message and storing it in a variable called <code>commit_message</code> using the following code:</p>
+            <code data-gist-id="befb53eb3ceb23509d04" data-gist-line="38" data-gist-hide-footer="true" data-gist-hide-line-numbers="true"></code>
+
+            <p class="light">Some of the developers I work with like using something called <a href="https://confluence.atlassian.com/fisheye/using-smart-commits-298976812.html#Usingsmartcommits-TransitionyourJIRAissues">smart commits</a> to log their time. Smart commits are baked into the JIRA/GitHub integration and they allow developers to log their time via commits without the use of this git hook. I found that these smart commits require too many key strokes for my developers to adopt. Additionally, they can make the commit history looks sort of ugly, but I digress. If we see a smart commit that logs time (i.e. includes the characters "#time"), we should not prompt the user to log time with this git hook. We can keep track if the commit is a smart commit using a variable that we'll call <code>is_smart_commit</code>.</p>
+            <code data-gist-id="befb53eb3ceb23509d04" data-gist-line="39-43" data-gist-hide-footer="true" data-gist-hide-line-numbers="true"></code>
+          </div>
+
+          <br/>
+
+          <div class="icon-block">
+            <p class="light"><span class="lead-in">Should we prompt the user?</span> We know the ticket that the user is working on and we know the commit message that the user entered but if we couldn't find a ticket number or if the user entered a smart commit, we shouldn't prompt the user for time.</p>
+            <code data-gist-id="befb53eb3ceb23509d04" data-gist-line="87-91" data-gist-hide-footer="true" data-gist-hide-line-numbers="true"></code>
+          </div>
+
+          <br/>
+
+          <div class="icon-block">
+            <p class="light"><span class="lead-in">Let's log some time!</span> The function starts off by prompting the user to enter the amount of time they spent on the commit. It reads that value into a variable called <code>time</code>. If the user did not enter any time, the script quits but if the user did enter something, the script wil send JIRA a POST request on behalf of the user. The POST request will log the amount of time that the user entered and will use the commit message as the description of the worklog. We can determine if we successfully logged time based on the response code of the POST request. If we successfully logged time, we show a success message. If we get an unauthorized response code, we give the user the option to call the <code>parse_jira_credentials</code> method so that they can update their JIRA credentials. Finally, if we get a response code that indicates failure, we present a failed message to the user. That's it!</p>
+            <code data-gist-id="befb53eb3ceb23509d04" data-gist-line="52-84" data-gist-hide-footer="true" data-gist-hide-line-numbers="true"></code>
+          </div>
+
+          <br/>
+
+          <div class="icon-block">
+            <p class="light"><span class="lead-in">Let me know what you think!</span> Feel free to leave <a href="#disqus_thread">comments</a>, share this post, check out the <a href="https://github.com/msolomonTMG/timesheet-githook">GitHub repository</a> and use the hook to fit your needs! Below is the code in it's entirety. Timesheets suck. But they don't have to.</p>
+            <code data-gist-id="befb53eb3ceb23509d04" data-gist-hide-footer="true"></code>
+          </div>
+
+      </div>
+    </div>
+
+    </div>
+    <!-- Disqus -->
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'mikesolomon';
+        
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Mike Solomon</h5>
+          <p class="grey-text text-lighten-4">I'm a product manager. This is my personal website where I post articles about the product/tech/ux industry that interest me, hopefully they interest you as well. Enjoy your stay!</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Social</h5>
+          <ul>
+            <li><a class="white-text" href="https://www.github.com/msolomonTMG"><i class="fa fa-github"></i> GitHub</a></li>
+            <li><a class="white-text" href="https://www.linkedin.com/in/michaelgarysolomon"><i class="fa fa-linkedin"></i> Linkedin</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Contact</h5>
+          <ul>
+            <li><a class="white-text" href="mailto:hello@mike-solomon.com"><i class="fa fa-send"></i> hello@mike-solomon.com</a></li>
+            <li><a class="white-text" href="tel:+16317477950"><i class="fa fa-phone"></i> 631-747-7950</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      <span class="left">Big ups to <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a></span>
+      <span class="right"><i class="fa fa-pencil"></i> with <i class="fa fa-heart"></i> from Brooklyn</span>
+      </div>
+    </div>
+  </footer>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!-- Needed for Gist Embedding of only select lines -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.2/gist-embed.min.js"></script>
+  <script src="public/js/materialize.js"></script>
+  <script src="public/js/init.js"></script>
+
+  <!-- GA -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-65057210-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+  </body>
+</html>
