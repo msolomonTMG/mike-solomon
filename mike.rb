@@ -19,6 +19,10 @@ get '/apollo-chrome-extension' do
 	erb :apollo_chrome_extension
 end
 
+get '/atlassian-summit-2015' do
+	redirect '/atlassian-summit-2015.html', 303
+end
+
 get '/api/documentation' do
 	erb :api_documentation
 end

@@ -5,6 +5,17 @@
  *
  * Made By MaterializeCSS.com
  */
+.jira-welcome {
+    background: url(http://i.imgur.com/iTT6LY7.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 550px;
+    color: white;
+    padding-left: 90px;
+}
+.jira-welcome .stick-to-bottom {
+  padding-top: 310px;
+}
 .lead-in {
   font-size: 1.64rem;
   font-weight: normal;
