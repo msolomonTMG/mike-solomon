@@ -50,8 +50,58 @@
       </div>
       <div class="row center">
         <a href="/api-documentation.html" class="btn-large waves-effect waves-light teal lighten-1">Get To Know Me</a>
+        <a class="modal-trigger waves-effect waves-light btn-large teal lighten-1" href="#contact-modal">Get in Touch</a>
       </div>
       <br><br>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div id="contact-modal" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Get in Touch</h4>
+      <div class="row">
+        <form id="contact-form" class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="email" name="email" type="email" class="validate">
+              <label for="email">Your Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s9">
+              <input id="subject" name="subject" type="text">
+              <label for="subject">Subject</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea id="message" name="message" class="materialize-textarea"></textarea>
+              <label for="message">Message</label>
+            </div>
+          </div>
+        </form>
+        <div id="contact-loading" class="center-align hide">
+          <div class="preloader-wrapper small active">
+            <div class="spinner-layer spinner-green-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="contact-confirmation-message" class="center-align hide">
+          <span id="contact-result"></span>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="btn waves-effect waves-light teal lighten-1" id="send-message"><i class="material-icons left">send</i> Send</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
     </div>
   </div>
 
@@ -342,6 +392,8 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="public/js/materialize.js"></script>
   <script src="public/js/init.js"></script>
+  <script src="public/js/modal.js"></script>
+  <script src="public/js/contact.js"></script>
 
   <!-- GA -->
   <script>
