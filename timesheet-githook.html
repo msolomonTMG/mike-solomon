@@ -132,9 +132,9 @@
 
           <div class="icon-block">
             <p class="light"><span class="lead-in">The first thing we want to do is check JIRA credentials.</span> We cannot log time via the JIRA API without these. We will be storing the credentials in the same directory as our post-commit file. This command will assign the <code>jira_credentials_file</code> variable to the file that lives in the user's git hook directory named <code>jira_credentials.txt</code></p>
-            
+
             <code data-gist-id="befb53eb3ceb23509d04" data-gist-line="32" data-gist-hide-footer="true" data-gist-hide-line-numbers="true"></code>
-            
+
             <p class="light">We use: <code><strong>`git rev-parse --git-dir`</strong>/hooks/jira_credentials.txt</code> rather than just <code><strong>/.git</strong>/hooks/jira_credentials.txt</code> because `git rev-parse --git-dir` command will the will change the user's directory to the proper git hooks directory even if they are using git submodules.</p>
 
             <p class="light">We then check if that file exists. If it does, we will assume the credentials within are valid. If the file does not exist, we will need to prompt the user to enter their JIRA credentials</p>
@@ -151,16 +151,16 @@
 
             <p class="light">Now that we know to look for a JIRA ticket in the git branch name, let's parse the git branch for it using this code. It will assign the variable <code>ticket</code> to the result of the function: <code>parse_jira_ticket_in_branch</code></p>
             <code data-gist-id="befb53eb3ceb23509d04" data-gist-line="35" data-gist-hide-footer="true" data-gist-hide-line-numbers="true"></code>
-            
+
             <p class="light">The <code>parse_jira_ticket_in_branch</code> function starts off by calling a different function: <code>parse_git_branch</code>. That's because we first need to determine what the name of the git branch is before we can start looking for JIRA tickets in it. I found both of these functions online at <a href="http://monksealsoftware.com/add-jira-issue-number-to-git-commit-message/">Monk Seal Software's Blog</a>.</p>
             <code data-gist-id="befb53eb3ceb23509d04" data-gist-line="27-29" data-gist-hide-footer="true" data-gist-hide-line-numbers="true"></code>
             <code data-gist-id="befb53eb3ceb23509d04" data-gist-line="22-24" data-gist-hide-footer="true" data-gist-hide-line-numbers="true"></code>
-            
+
             <p class="light">The <code>parse_git_branch</code> function returns the branch name and then the <code>parse_jira_ticket_in_branch</code> function the ticket name by using a regular expression that captures issue key using patterns such as "ABC-123" or "abc-123" (it doesn't matter how many letters or numbers your keys have). Now we know which ticket we are going to log time to and it is stored in our variable named <code>ticket</code>!
           </div>
 
           <br/>
-          
+
           <div class="icon-block">
             <p class="light"><span class="lead-in">Let's take a look at the commit message.</span> The commit message will be used as the description for the user's timesheet. The git hook documentation gives us a command for retrieving the commit in a post-commit hook. I took it one step further by grabbing only the commit message and storing it in a variable called <code>commit_message</code> using the following code:</p>
             <code data-gist-id="befb53eb3ceb23509d04" data-gist-line="38" data-gist-hide-footer="true" data-gist-hide-line-numbers="true"></code>
@@ -199,7 +199,7 @@
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES * * */
         var disqus_shortname = 'mikesolomon';
-        
+
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -230,7 +230,6 @@
           <h5 class="white-text">Contact</h5>
           <ul>
             <li><a class="white-text" href="mailto:hello@mike-solomon.com"><i class="fa fa-send"></i> hello@mike-solomon.com</a></li>
-            <li><a class="white-text" href="tel:+16317477950"><i class="fa fa-phone"></i> 631-747-7950</a></li>
           </ul>
         </div>
       </div>
